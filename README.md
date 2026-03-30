@@ -40,9 +40,10 @@ Projenin arkasındaki tüm mühendislik detaylarını, el yazısı notlarım ve 
 
 ### Notlarda Neler Var?
 * **Raycasting Motoru:** Mesafe hesaplama ($h = H/d$) ve balık gözü (fish-eye) düzeltme formülleri.
-* **Prosedürel Ses Sentezi:** Silah ateşleme ve darbe seslerinin sinüs dalgaları ve frekans kayması ($f(t)$) ile matematiksel üretimi.
+* **Prosedürel Ses Sentezi:** Silah ateşleme ve darbe seslerinin sinüs dalgaları ve frekans kayması ile matematiksel üretimi.
 * **DDA Algoritması:** Mermi takibi ve duvar çarpışma kontrollerinin ızgara (grid) üzerindeki mantığı.
 * **Fizik ve Hareket:** Bakış açısına göre trigonometrik konum güncelleme ($x', y'$) ve $dt$ (Delta Time) yönetimi.
+* **Varlık Çarpışma Alanları:** Öklid mesafesini kullanan düşmanlar için çarpışma mantığı: $\sqrt{(Mx - ex)^2 + (My - ey)^2} < r$
 * **Oyun Döngüsü:** Giriş, fizik güncelleme ve render akış şeması.
 
 ## DESCRIPTION
@@ -80,11 +81,11 @@ This project is built from scratch without external graphics libraries. You can 
 **[Technical Notes: Raycasting, DDA & Procedural Audio (PDF)](./Raycast.pdf)**
 
 ### What's Inside?
-* **Raycasting Engine:** Core mechanics of 3D projection using distance-to-height ratios ($h = H/d$) [cite: 16, 90] [cite_start]and fish-eye effect correction using $d_{\text{corrected}} = d \cdot \cos(\alpha - \beta)$[cite: 23, 97].
-* **Procedural Audio Synthesis:** Real-time generation of gunshot effects via linear pitch sliding ($f(t) = f_{\text{start}} - (k \cdot t)$) [cite: 26, 100] [cite_start]and impact sounds using exponential amplitude decay ($A(t) = A_0 \cdot e^{-\lambda t}$).
-* **DDA Algorithm:** Precise bullet tracking and wall collision detection by stepping through the 2D grid.
-* **Physics & Movement:** Trigonometric position updates ($x', y'$) calculated with Delta Time ($dt$) for frame-independent movement.
-* **Entity Hitboxes:** Collision logic for enemies using Euclidean distance: $\sqrt{(Mx - ex)^2 + (My - ey)^2} < r$.
-* **System Architecture:** Detailed Game Loop breakdown (Input → Physics Update → Raycast Render → Terminal Output).
+* **Raycasting Engine:** Formulas for distance calculation ($h = H/d$) and fish-eye correction.
+* **Procedural Sound Synthesis:** Mathematical generation of gunfire and impact sounds using sine waves and frequency shifting.
+* **DDA Algorithm:** The logic of bullet tracking and wall collision checks on the grid.
+* **Physics and Movement:** Trigonometric position updates ($x', y'$) based on the viewing angle and $dt$ (Delta Time) management.
+* **Entity Hitboxes:** Collision logic for enemies using Euclidean distance: $\sqrt{(Mx - ex)^2 + (My - ey)^2} < r$
+* **Game Loop:** Input, physics update, and render flowchart.
 
 **Geliştirici / Developer:** Mustafa Cagatay OZDEM
